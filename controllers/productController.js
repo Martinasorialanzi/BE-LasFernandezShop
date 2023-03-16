@@ -69,8 +69,7 @@ try{
     
 
 const addProduct=async(req,res)=>{
-    const{codigo,prenda,marca,categoria,fechaIngreso,precioVenta,estado,tiempoEnVenta
-    }=req.body //del formulario de registro (req.body) traeme name,lastname,email,password, es decir tomo esos datos
+    const{codigo,prenda,marca,categoria,cliente,fechaIngreso,precioVenta,estado,tiempoEnVenta}=req.body //del formulario de registro (req.body) traeme name,lastname,email,password, es decir tomo esos datos
     try{
         // if (!product){
         //     res.status(400).json({
@@ -85,6 +84,7 @@ const addProduct=async(req,res)=>{
             prenda,
             marca,
             categoria,
+            cliente,
             fechaIngreso,
             precioVenta,
             estado,
@@ -93,6 +93,7 @@ const addProduct=async(req,res)=>{
             
         }
         );
+        
 
         // if(req.file){  //si viene un archivo imagen guardalo
         //     const{filename}=req.file;

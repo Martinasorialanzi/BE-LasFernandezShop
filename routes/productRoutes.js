@@ -3,7 +3,7 @@
 const router= require('express').Router()
 
 const { getAllProducts, getProduct, addProduct, updateProduct, deleteProduct}= require (`../controllers/productController`)
-const upload = require('../library/storage')
+// const upload = require('../library/storage')
 
 router.get("/products", getAllProducts)
 

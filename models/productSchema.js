@@ -23,14 +23,19 @@ const productSchema= new mongoose.Schema({
 
     categoria:{
         type: String,
-        Enumerator:[pantalon,remera,vestido,pollera,short,anteojos,top],
+        Enumerator:["pantalon","remera","vestido","pollera","short","anteojos","top"],
         required: false
         
+    },
+    cliente:{
+        type:String,
+        required:true
     },
 
     fechaIngreso:{
         type:Date,
-        required: true
+        default: Date.now
+        
         
     },
 
@@ -44,7 +49,7 @@ const productSchema= new mongoose.Schema({
 
     estado:{
         type: String,
-        Enumerator:[vendido,local],
+        Enumerator:["vendido","local"],
         required: false
         
     },

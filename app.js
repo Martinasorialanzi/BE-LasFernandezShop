@@ -8,21 +8,21 @@ const productRoutes= require(`./routes/productRoutes`)
 const app=express(); //OK
 
 
-// const cors=require("cors");
-// const corsOptions ={
-//    origin:'*', 
-//    credentials:true,            //access-control-allow-credentials:true
-//    optionSuccessStatus:200,
-// }
+const cors=require("cors");
+const corsOptions ={
+   origin:'*', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
 
-// app.use((req, res, next) => {
-//     res.setHeader('Access-Control-Allow-Origin', '*');
-//     res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE');
-//     res.setHeader('Access-Control-Allow-Methods', 'Content-Type', 'Authorization');
-//     next();
-// })
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE');
+    res.setHeader('Access-Control-Allow-Methods', 'Content-Type', 'Authorization');
+    next();
+})
 
-// app.use(cors(corsOptions)) // Use this after the variable declaration
+app.use(cors(corsOptions)) // Use this after the variable declaration
 
 
 app.use(bodyParser.urlencoded({extended:'true'})) //esto lo que hace es parsear todas las respuestas que tenemos
@@ -38,6 +38,11 @@ app.use(`/v1`,productRoutes)  //poner nombre de la version de la api entonces el
 app.get("/", (req, res) => {
     res.status(200).send({msg:"hola"})
 })
+
+// app.get("/products",(req,res)=>{
+//     const page=req.query.page
+//     const limit=req.query.limit
+// })
 
 
 module.exports=app;

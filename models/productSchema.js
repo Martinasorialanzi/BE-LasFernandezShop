@@ -34,9 +34,8 @@ const productSchema= new mongoose.Schema({
 
     fechaIngreso:{
         type:Date,
-        default: Date.now
-        
-        
+        default: Date.now()
+    
     },
 
     precioVenta:{

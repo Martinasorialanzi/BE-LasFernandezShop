@@ -22,6 +22,7 @@ const getAllProducts = async (req, res) => {
       productsCount,
       totalPages,
       products,
+      totalProducts,
       statusCode: 200,
       message: "Products found",
     });
@@ -88,6 +89,7 @@ const addProduct = async (req, res) => {
     prenda,
     marca,
     categoria,
+    talle,
     cliente,
     fechaIngreso,
     precioVenta,
@@ -108,6 +110,7 @@ const addProduct = async (req, res) => {
       prenda,
       marca,
       categoria,
+      talle,
       cliente,
       fechaIngreso,
       precioVenta,

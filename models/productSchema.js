@@ -19,6 +19,10 @@ const productSchema= new mongoose.Schema({
         required: true
         
     },
+    talle:{
+        type: String,
+
+    },
 
 
     categoria:{

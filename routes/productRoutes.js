@@ -11,7 +11,7 @@ router.get("/product/:_id",getProduct)
 
 router.post("/products",addProduct)
 
-router.patch ("/product/:_id", updateProduct)
+router.put ("/product/:_id", updateProduct)
 
 router.delete("/product/:_id", deleteProduct)
 

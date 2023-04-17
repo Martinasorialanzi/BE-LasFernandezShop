@@ -10,13 +10,13 @@ const productSchema= new mongoose.Schema({
 
     prenda:{
         type: String,
-        // required: true
+        required: true
         
     },
 
     marca:{
         type: String,
-        // required: true
+        required: true
         
     },
     talle:{
@@ -33,7 +33,7 @@ const productSchema= new mongoose.Schema({
     },
     cliente:{
         type:String,
-        // required:true
+        required:true
     },
 
     fechaIngreso:{
@@ -44,7 +44,7 @@ const productSchema= new mongoose.Schema({
 
     precioVenta:{
         type: Number,
-        // required: true
+        required: true
         
     },
 

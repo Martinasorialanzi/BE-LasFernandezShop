@@ -7,7 +7,10 @@ const productSchema= new mongoose.Schema({
         type: Number,
         required: false
     },
-
+    idCliente:{
+        type:Number,
+        require:false
+    },
     prenda:{
         type: String,
         required: true

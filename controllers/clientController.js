@@ -7,15 +7,39 @@ const getAllClients = async (req, res) => {
   
     try {
       const totalProducts = await Product.find();
-      const clients= await _.uniqBy(totalProducts,"cliente")
-      console.log(clients.cliente)
-      const gananciaCliente=await _.sumBy(_.filter(totalProducts,"cliente"),"precioVenta")
+      
+      const objetoCliente={}
+     
+
+      totalProducts.forEach(x=>{
+        //Si el cliente no existe en nuevoObjeto entonces
+  //la creamos e inicializamos el arreglo de productos.
+  if(!objetoCliente.hasOwnProperty(x.cliente)){
+    [objetoCliente[x.cliente]={
+      cliente:x.cliente,
+      productos:[],
+    }]
+    
+  } 
+
+  //agregamos los datos de productos.
+    objetoCliente[x.cliente].productos.push({
+      cliente:x.cliente,
+      nombre:x.nombre,
+      codigo:x.codigo,
+      precioVenta:x.precioVenta,
+      estado:x.estado
+    })
+    
+
+  
+  })
+  const clientes=_.toArray(objetoCliente)
+
+ 
       res.status(200).send({
-        clients,
-        gananciaCliente,
-        totalProducts,
-        statusCode: 200,
-        message: "Products found",
+        clientes
+      
       });
   
   

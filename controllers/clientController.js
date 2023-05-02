@@ -16,8 +16,9 @@ const getAllClients = async (req, res) => {
   //la creamos e inicializamos el arreglo de productos.
   if(!objetoCliente.hasOwnProperty(x.cliente)){
     [objetoCliente[x.cliente]={
-      cliente:x.cliente,
+      proveedor:x.cliente,
       productos:[],
+      dineroPagado:0
     }]
     
   } 
@@ -25,11 +26,14 @@ const getAllClients = async (req, res) => {
   //agregamos los datos de productos.
     objetoCliente[x.cliente].productos.push({
       cliente:x.cliente,
-      nombre:x.nombre,
+      prenda:x.prenda,
       codigo:x.codigo,
       precioVenta:x.precioVenta,
       estado:x.estado
     })
+    
+ 
+    //  console.log( objetoCliente[x.cliente].productos.filter((producto)=>{producto.estado="vendido"}))
     
 
   
